@@ -2,16 +2,21 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
-
+import LoginScreen from './screens/LoginScreen';
 
 function App() {
+  const user = false;
+
   return (
     <div className="app">
       <Router>
-        <Routes>
-          <Route exact path="/" element={<HomeScreen />} />
-          <Route exact path="/test" element={<h1>test</h1>} />
-        </Routes>
+        {!user ? (
+          <LoginScreen />
+        ) : (
+          <Routes>
+            <Route exact path="/" element={<HomeScreen />} />
+          </Routes>
+        )}
       </Router>
     </div>
   );
