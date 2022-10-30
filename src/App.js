@@ -27,7 +27,7 @@ function App() {
       }
     });
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="app">
@@ -35,7 +35,6 @@ function App() {
         {!user ? (
           <LoginScreen />
         ) : (
-          
           <Routes>
             <Route exact path="/" element={<HomeScreen />} />
             <Route exact path="/profile" element={<ProfileScreen />} />
