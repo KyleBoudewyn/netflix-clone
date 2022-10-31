@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import { setAutoFreeze } from 'immer';
 import { auth } from '../firsbase';
+import PlansScreen from './PlansScreen';
 
 export default function ProfileScreen() {
   const user = useSelector(selectUser);
@@ -23,6 +24,7 @@ export default function ProfileScreen() {
             <h2>{user.email}</h2>
             <div className="profileScreen_plans">
               <h3>Plans</h3>
+              <PlansScreen />
               <button
                 onClick={() => auth.signOut()}
                 className="profileScreen_signOut"
