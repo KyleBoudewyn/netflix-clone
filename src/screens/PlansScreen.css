@@ -21,3 +21,9 @@
 .plansScreen_plan--disabled > button {
   background-color: gray !important;
 }
+
+.PlansScreen_warning{
+  color: #e50914;
+  font-size: 1rem;
+  font-weight: 600;
+}

@@ -73,11 +73,21 @@ export default function PlansScreen() {
 
   return (
     <div className="PlansScreen">
-    <br/>
+      <br />
+      <p className="PlansScreen_warning">
+        The subscribe link will take you to the stripe checkout integration. This is for demo
+        purposes only. Do not type your credit
+        card info into stripe. You can use the following demo data: <br/>
+        Card Number: 4242 4242 4242 4242<br/>
+        Exp: 424 CVC: 424
+        All Other Fields: ABC
+      </p>
       {subscription && (
         <p>
-          Renewal date: {new Date(subscription?.current_period_end *
-          1000).toLocaleDateString()}
+          Renewal date:{' '}
+          {new Date(
+            subscription?.current_period_end * 1000
+          ).toLocaleDateString()}
         </p>
       )}
       {Object.entries(products).map(([productId, productData]) => {
